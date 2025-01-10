@@ -14,6 +14,7 @@ import {
 import { useRouter } from 'next/navigation';
 import ScrollItem from './ScrollItem';
 import WinnerPrizes from '@/app/(components)/WinnerPrizes';
+import ShowResults from '@/app/(components)/ShowResults';
 const LandingPage = () => {
 
     return (
@@ -24,15 +25,22 @@ const LandingPage = () => {
 
                 <h1 className='text-white font-bold text-4xl '>{Constants.TITLE}</h1>
             </div>
-            <div className='flex-col w-full justify-center items-center mt-10'>
-                {/* giải thưởng  */}
-                <ScrollItem />
-                <div className='flex items-center justify-center mt-10'>
-                    <h1 className='gradient-text'>{Constants.EVENTS}</h1>
+            <div className='flex items-center justify-evenly relative'>
+                <div className='absolute top-5 left-20'>
+                    <WinnerPrizes />
                 </div>
-                <WinnerPrizes />
-            </div>
+                <div className='flex-col justify-center items-center mt-10'>
+                    {/* giải thưởng  */}
 
+                    <ScrollItem />
+
+
+                </div>
+            </div>
+            <div className='flex items-center justify-center my-10'>
+                <h1 className='gradient-text'>{Constants.EVENTS}</h1>
+            </div>
+            <ShowResults />
         </div>
     )
 }

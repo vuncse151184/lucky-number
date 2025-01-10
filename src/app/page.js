@@ -8,7 +8,6 @@ import UploadPrize from './(components)/UploadPrize'
 import UploadUser from './(components)/UploadUser'
 
 
-
 const Page = () => {
   const router = useRouter()
   const handleNavigate = () => {
@@ -34,7 +33,9 @@ const Page = () => {
         </div>
 
       </div>
+
       <UploadPrize />
+
       <UploadUser />
 
     </div>

@@ -21,13 +21,9 @@ const WinnerModal = ({ open, onClose, currentWinner }) => {
                     <DialogTitle>
                     </DialogTitle>
                     <DialogDescription className=" items-center">
-                 
                             <span className='text-xl text-orange-500 font-semibold'>
                                 Chúc mừng <span className="font-bold text-red-900">{currentWinner}</span> đã trúng giải
                             </span>
-                     
-
-
                     </DialogDescription>
                 </DialogHeader>
                 <DialogFooter className="h-6">
