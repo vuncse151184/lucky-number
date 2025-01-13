@@ -9,6 +9,7 @@ body {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+  overflow: hidden;
 }
 
 @layer utilities {
@@ -36,11 +37,10 @@ body {
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);
 
-body {
-  font-family: 'Open Sans', sans-serif;
-  height: 100%;
+body ::-webkit-scrollbar{
+  display: none;
+  
 }
-
 .gradient-text {
   font-size: 48px;
   font-weight: bold;

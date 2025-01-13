@@ -30,9 +30,6 @@ const ScrollItem = () => {
     const [isEnoughForPrize, setIsEnoughForPrize] = useState(false)
     const [result, setResult] = useState([]) // Store the result of each prize
     const { setStoreResult } = useStoreResult()
-    console.log("currentPrize", currentPrize)
-    console.log("result", result)
-
     useEffect(() => {
         // Get prizeData from localStorage 
         if (typeof window !== 'undefined') {
@@ -44,9 +41,6 @@ const ScrollItem = () => {
             }, {});
             setResult(resultArr)
         }
-
-
-
     }, [])
     useEffect(() => {
         if (currentPrize.quantity === 0 && currentPrize.name) {
@@ -74,11 +68,13 @@ const ScrollItem = () => {
             });
         }
 
+        console.log("TEST", data[11])
+        //Random and remove the winner from the list
         const randomItem = data.splice(Math.floor(Math.random() * data.length), 1)[0]
-        setStoreData(data)
-        setCurrentWinner(randomItem["Tên"])
-        localStorage.setItem('data', JSON.stringify(data))// Remove the winner from localStorage
-        setStoreData(data.filter((item) => item["Mã nhân viên"] !== randomItem["Mã nhân viên"])) // Remove the winner from the store list (zustand)
+        setStoreData(data)// Remove the winner from storeData
+        setCurrentWinner(randomItem)
+        // Double check to remove the winner in case still in the store userData list (zustand)
+        setStoreData(data.filter((item) => item["Mã nhân viên"] !== randomItem["Mã nhân viên"]))
         //result[currentPrize.name].push(randomItem["Mã nhân viên"])
         for (let index = 0; index < result[currentPrize.name].length; index++) {
             if (index === parseInt(currentPrize.quantity - 1)) {
@@ -93,7 +89,7 @@ const ScrollItem = () => {
 
     const SpinPrize = (result) => {
         const digits = result.slice(-6).split('') // Get last 6 digits of "Mã nhân viên"
-  
+
         const tl = gsap.timeline({
             onComplete: () => {
                 setStart(false)
