@@ -13,7 +13,7 @@ function ShowPrizes() {
     }, [])
     return (
         <div>
-            <div className='flex w-full justify-center gap-5'>
+            <div className='flex w-full justify-center '>
                 {prize.map((item, index) => (
                     currentPrize.name === item['Loại'] ? (
                         <div key={index} className='items-center p-8 pt-1 bg-white rounded-lg shadow-sm shrink-0 shadow-slate-400 relative'>

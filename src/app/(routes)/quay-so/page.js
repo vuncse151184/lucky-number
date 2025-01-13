@@ -23,7 +23,7 @@ const LandingPage = () => {
 
                 <img src="/favicon.png" alt="logo" className='w-20 ' color='white' />
 
-                <h1 className='text-white font-bold text-4xl '>{Constants.TITLE}</h1>
+                <h1 className='text-white font-bold text-4xl'>{Constants.TITLE}</h1>
             </div>
             <div className='flex sm:block  items-center justify-evenly relative'>
                 <div className='absolute top-10 left-20'>

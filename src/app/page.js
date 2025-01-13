@@ -21,7 +21,7 @@ const Page = () => {
         {/* logo */}
         <div className='flex items-center gap-5'>
           <img src="/favicon.png" alt="logo" className='w-20' />
-          <h1 className='text-[#0864b4] text-4xl sm:text-sm '>{Constants.TITLE}</h1>
+          <h1 className='text-[#0864b4] text-4xl '>{Constants.TITLE}</h1>
         </div>
         <div className='flex gap-5 justify-end w-[90%]'>
           <Button onClick={handleNavigate} >
